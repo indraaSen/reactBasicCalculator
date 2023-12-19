@@ -1,44 +1,85 @@
 import { useState } from 'react';
 import './App.css';
+import Button from './Button/Button';
 
 function App() {
 
-  const [val1, setVal1] = useState(1);
-  const [val2, setVal2] = useState(1);
+  const [val2, setVal2] = useState('');
+  const [temp, setTemp] = useState(0)
 
+  const btnArr1 = [1,2,3];
+  const btnArr2 = [4,5,6];
+  const btnArr3 = [7,8,9];
+  const btnArr4 = ['C', '0' , '=']
 
-  const [op, setOp] = useState(0);
+  const btnOp = ['+', '-','*','/'];
 
-  const addValue = () => {
-    setOp(parseInt(val1) + parseInt(val2));
-  }
-  const subValue = () => {
-    setOp(parseInt(val1) - parseInt(val2));
-  }
-  const divValue = () => {
-    if(val2 !== "0")
-      setOp(parseInt(val1) / parseInt(val2));
-    else
-      setOp("can't divided by zero");
-  }
-  const mulValue = () => {
-    setOp(parseInt(val1) * parseInt(val2));
+  const printValue = (value) => {
+    setVal2(val2 + value)
+
+    if(value === 'C'){
+      setVal2('');
+      setTemp(0)
+    }
+
+    if(value === '+'){
+      setVal2('');
+      setTemp(parseInt(val2) + temp)
+    }
+    if(value === '='){
+      setTemp(temp + val2);
+      setVal2('');
+      setVal2(parseInt(temp) + parseInt(val2));
+    }
+    // if(value === '-'){
+    //   setVal2('');
+    //   setTemp(val2 + '-');
+    // }
+    // if(value === '/'){
+    //   setVal2('');
+    //   setTemp(val2 + '/');
+    // }
+    // if(value === '*'){
+    //   setVal2('');
+    //   setTemp(val2 + '*');
+    // }
+    
   }
 
+  const intBtn1 = btnArr1.map((btnNum) => <Button btnNum = {btnNum} btnFun={printValue}/>)
+  const intBtn2 = btnArr2.map((btnNum) => <Button btnNum = {btnNum} btnFun={printValue}/>)
+  const intBtn3 = btnArr3.map((btnNum) => <Button btnNum = {btnNum} btnFun={printValue}/>)
+  const intBtn4 = btnArr4.map((btnNum) => <Button btnNum = {btnNum} btnFun={printValue}/>)
+
+  const opBtn = btnOp.map((op) => <Button btnOp = {op} btnFun={printValue} />)
 
   return (
     <div className="App">
       
       <div>
-        <input type="number" value={val1} onChange={(e) => setVal1(e.target.value)} /> <br />
-        <input type="number" value={val2} onChange={(e) => setVal2(e.target.value)} />
+
+        <span>this : {temp}</span><br /><br />
+        <input type="text" value={val2}  onChange={(e) => setVal2(e.target.value)}/>
+
       </div>
+
       <div>
-        <span>The result is = {op}</span> <br />
-        <button onClick={addValue}>add</button>
-        <button onClick={subValue}>sub</button><br />
-        <button onClick={divValue}>div</button>
-        <button onClick={mulValue}>mul</button>
+
+        <div id='intBtn'>
+
+          <span className='span' >{intBtn1}</span> 
+          <span className='span' >{intBtn2}</span> 
+          <span className='span' >{intBtn3}</span>
+          <span className='span' >{intBtn4}</span>
+
+        </div>
+
+        <div id='opBtnDiv'>
+
+          <span id='opBtn'> {opBtn}</span>
+
+        </div>
+
       </div>
       
     </div>
