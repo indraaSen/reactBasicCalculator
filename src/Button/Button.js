@@ -1,12 +1,12 @@
 
 
 const Button = (props) => {
-    const {btnNum,btnFun,btnOp} = props;
+    //const {btnNum,btnFun,btnOp} = props;
     return (
         
        <div>
-           {btnNum && <button onClick={()=> btnFun(btnNum)}>{btnNum}</button>}
-           {btnOp && <button onClick={()=> btnFun(btnOp)}>{btnOp}</button>}
+           {props.btnNum && <button onClick={()=> props.btnFun(props.btnNum)}>{props.btnNum}</button>}
+           {props.btnOp && <button onClick={()=> props.btnFun(props.btnOp)}>{props.btnOp}</button>}
        </div>
         
     );

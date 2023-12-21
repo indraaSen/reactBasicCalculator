@@ -1,12 +1,49 @@
 .App {
+  box-sizing: border-box;
+  position: relative;
+ background-color: grey;
+ border-radius: 10px;
+  height: 375px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 40%;
+  margin-top: 25px;
+}
+
+.AppChild{
+  margin: 30px;
+  box-sizing: border-box;
+  position: absolute;
+  width: 260px;
+  height: 340px;
+  
+}
+#show{
+  width: 250px;
+  height: 20px;
+  margin-bottom: 15px;
+  border: none;
+  background-color:rgb(142, 142, 142);
+  text-align: right;
+  border-radius: 2px;
+}
+
+#textInput{
+  padding: 10px;
+  width: 235px;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 6px;
+  margin-bottom: 5px;
+  background-color: rgb(220, 218, 218);
+  color: rgb(0, 0, 0);
+  text-align: right;
+  font-size: 17px;
 }
 
 .span{
   display: flex;
-  
 }
 
 #opBtnDiv{
@@ -14,9 +51,69 @@
   
 }
 
-#opBtn{
+#opBtn1, #opBtn2, #opBtn3, #opBtn4{
   display: inline-grid;
   position: absolute;
-  margin-top: -90px;
-  margin-left: 75px;
+  margin-top: -253px;
+  margin-left: 194px;
+}
+
+#opBtn1 div button{
+  padding: 20px 25px;
+  border-radius: 5px;
+  margin: 2px;
+  background-color: #e5e5e5;
+}
+
+#opBtn2 div button{
+  padding: 20px 26px;
+  border-radius: 5px;
+  margin-top: 65px;
+  margin-left: 2px;
+  background-color: #e5e5e5;
+}
+
+#opBtn3 div button{
+  padding: 20px 26px;
+  border-radius: 5px;
+  margin-top: 129px;
+  margin-left: 2px;
+  background-color: #e5e5e5;
+}
+
+#opBtn4 div button{
+  padding: 20px 27px;
+  border-radius: 5px;
+  margin-top: 192px;
+  margin-left: 2px;
+  background-color: #e5e5e5;
+}
+
+.span div button{
+  padding: 20px 25px;
+  border-radius: 5px;
+  margin: 2px;
+  background-color: rgb(255, 255, 255);
+}
+
+
+#AlpC button{
+  background-color: orange;
+  padding: 20px 24px;
+}
+
+#numO{
+  margin-left: 65px;
+  margin-top: -63px;
+}
+
+#OpEquals{
+  margin-left: 130px;
+  margin-top: -63px;
+}
+
+#OpEquals button{
+  background-color: blue;
+  color: white;
+  width: 60px;
 }
