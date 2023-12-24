@@ -1,8 +1,8 @@
 .App {
   box-sizing: border-box;
   position: relative;
- background-color: grey;
- border-radius: 10px;
+  background-color: grey;
+  border-radius: 10px;
   height: 375px;
   width: 300px;
   display: flex;
@@ -17,9 +17,9 @@
   box-sizing: border-box;
   position: absolute;
   width: 260px;
-  height: 340px;
-  
+  height: 340px; 
 }
+
 #show{
   width: 250px;
   height: 20px;
@@ -46,56 +46,12 @@
   display: flex;
 }
 
-#opBtnDiv{
-  position: relative;
-  
-}
-
-#opBtn1, #opBtn2, #opBtn3, #opBtn4{
-  display: inline-grid;
-  position: absolute;
-  margin-top: -253px;
-  margin-left: 194px;
-}
-
-#opBtn1 div button{
-  padding: 20px 25px;
-  border-radius: 5px;
-  margin: 2px;
-  background-color: #e5e5e5;
-}
-
-#opBtn2 div button{
-  padding: 20px 26px;
-  border-radius: 5px;
-  margin-top: 65px;
-  margin-left: 2px;
-  background-color: #e5e5e5;
-}
-
-#opBtn3 div button{
-  padding: 20px 26px;
-  border-radius: 5px;
-  margin-top: 129px;
-  margin-left: 2px;
-  background-color: #e5e5e5;
-}
-
-#opBtn4 div button{
-  padding: 20px 27px;
-  border-radius: 5px;
-  margin-top: 192px;
-  margin-left: 2px;
-  background-color: #e5e5e5;
-}
-
 .span div button{
   padding: 20px 25px;
   border-radius: 5px;
   margin: 2px;
   background-color: rgb(255, 255, 255);
 }
-
 
 #AlpC button{
   background-color: orange;
@@ -116,4 +72,46 @@
   background-color: blue;
   color: white;
   width: 60px;
+}
+
+#opBtnDiv{
+  position: relative;
+}
+
+#opBtn1, #opBtn2, #opBtn3, #opBtn4{
+  display: inline-grid;
+  position: absolute;
+  margin-top: -253px;
+  margin-left: 194px;
+}
+
+#opBtn4 div button{
+  padding: 20px 27px;
+  border-radius: 5px;
+  margin-top: 192px;
+  margin-left: 2px;
+  background-color: #e5e5e5;
+}
+
+#opBtn3 div button{
+  padding: 20px 26px;
+  border-radius: 5px;
+  margin-top: 129px;
+  margin-left: 2px;
+  background-color: #e5e5e5;
+}
+
+#opBtn2 div button{
+  padding: 20px 26px;
+  border-radius: 5px;
+  margin-top: 65px;
+  margin-left: 2px;
+  background-color: #e5e5e5;
+}
+
+#opBtn1 div button{
+  padding: 20px 25px;
+  border-radius: 5px;
+  margin: 2px;
+  background-color: #e5e5e5;
 }

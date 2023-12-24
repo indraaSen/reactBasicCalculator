@@ -5,9 +5,8 @@ import Button from './Button/Button';
 function App() {
 
   const [newValue, setNewValue] = useState(0);
-  const [prevValue, setPrevValue] = useState("0");
-  const [currentOp,setCurrentOp] = useState('+');
-  //const [allOperation, setAllOperation] = useState('0');
+  const [prevValue, setPrevValue] = useState('0');
+  const [currentOp,setCurrentOp] = useState('');
 
   const btnArr1 = ['1','2','3'];
   const btnArr2 = ['4','5','6'];
@@ -22,10 +21,8 @@ function App() {
   const opBtn4 = ['/'];
 
   const printValue = (value) => {
-
-    //setAllOperation(newValue + value)
     
-    if (newValue != '0') {
+    if (newValue !== 0) {
       setNewValue(newValue + value)
     }else{
       setNewValue(value);
@@ -34,39 +31,37 @@ function App() {
 
   const opClick = (op) =>{
 
-    if (op == '=') {
-      console.log("prevValue",prevValue);
-      console.log("newValue",newValue);
+    if (op === '=') {
+      setPrevValue(newValue);
 
       switch (currentOp) {
         case '+':
-          setNewValue(parseInt(prevValue)+parseInt(newValue))
+          setNewValue(parseInt(prevValue)+parseInt(newValue));
           break;
         case '-':
-          setNewValue(parseInt(prevValue)-parseInt(newValue))
+          setNewValue(parseInt(prevValue)-parseInt(newValue));
           break;
         case '/':
-          setNewValue(parseInt(prevValue)/parseInt(newValue))
+          setNewValue(parseInt(prevValue)/parseInt(newValue));
           break;
         case '*':
-          setNewValue(parseInt(prevValue)*parseInt(newValue))
+          setNewValue(parseInt(prevValue)*parseInt(newValue));
           break;
         default:
           break;
       } 
+
       return;
     }
 
     setPrevValue(newValue);
     setNewValue(0);
     setCurrentOp(op);
-    console.log("op",op);
 
-    if (op == 'C') {
+    if (op === 'C') {
       setNewValue(0);
       setPrevValue('0');
-      setCurrentOp('+');
-      // setAllOperation('0')
+      setCurrentOp('');
     }
   }
 
@@ -90,7 +85,7 @@ function App() {
         <div>
 
           <input id="show" type="text" value={prevValue}/><br /> 
-          <input id="textInput" type="text" value={newValue}  onChange={(e) => setNewValue(e.target.value)}/>
+          <input id="textInput" type="text" value={newValue} onChange={(e) => setNewValue(e.target.value)}/> 
 
         </div>
 

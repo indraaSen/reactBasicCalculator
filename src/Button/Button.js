@@ -1,7 +1,7 @@
 
 
 const Button = (props) => {
-    //const {btnNum,btnFun,btnOp} = props;
+
     return (
         
        <div>
